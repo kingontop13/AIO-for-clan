@@ -24,6 +24,9 @@ if sys .version_info <(3 ,11 ):
 
             typing .Self =type ('Self',(),{})
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import aiohttp 
 import discord 
 from discord .ext import commands 
@@ -34,15 +37,13 @@ from utils .config import *
 from utils .logger import logger
 import jishaku 
 import cogs 
-
+import aiosqlite 
+import logging 
 
 
 
 async def load_reactionrole ():
     await bot .add_cog (cogs .ReactionRole (bot ))
-import aiosqlite 
-import logging 
-from dotenv import load_dotenv 
 
 
 def print_startup_banner ():
@@ -62,10 +63,6 @@ def print_system_ready ():
     """Print the final system ready message"""
     logger.success("SYSTEM", "AeroX is now online and ready to serve!")
 
-
-
-
-load_dotenv ()
 _log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logs')
 os.makedirs(_log_dir, exist_ok=True)
 
