@@ -178,42 +178,14 @@ class Errors (Cog ):
 
 
             if isinstance (error ,commands .CheckFailure ):
-
-                try :
-                    data =await get_ignore_data (ctx .guild .id )
-                    ch =data .get ("channel",[])
-                    iuser =data .get ("user",[])
-                    cmd =data .get ("command",[])
-                    buser =data .get ("bypassuser",[])
-
-                    if str (ctx .author .id )in buser :
-                        return 
-
-                    if str (ctx .channel .id )in ch :
-                        await ctx .reply (
-                        f"{ctx.author.mention} This **channel** is on the **ignored** list. Please try my commands in another channel.",
-                        delete_after =8 
-                        )
-                        return 
-
-                    if str (ctx .author .id )in iuser :
-                        await ctx .reply (
-                        f"{ctx.author.mention} You are set as an **ignored user** for this guild. Please try my commands or modules in a different guild.",
-                        delete_after =8 
-                        )
-                        return 
-
-                    if ctx .command .name in cmd or any (alias in cmd for alias in ctx .command .aliases ):
-                        await ctx .reply (
-                        f"{ctx.author.mention} This **command is ignored** in this guild. Please use other commands or try this command in a different guild.",
-                        delete_after =8 
-                        )
-                        return 
-                except Exception as e :
-
-                    pass 
-
-
+                from utils.config import OWNER_IDS
+                embed = discord.Embed(color=0x000000)
+                embed.set_author(name="Access Denied", icon_url=self.client.user.avatar.url if self.client.user else None)
+                if ctx.author.id not in OWNER_IDS:
+                    embed.description = f"{ctx.author.mention} You are **not registered** as a bot owner.\n\nAdd your Discord ID to `OWNER_IDS` in the `.env` file and **restart** the bot."
+                else:
+                    embed.description = f"{ctx.author.mention} You don't have permission to use this command."
+                await ctx.reply(embed=embed)
                 return 
 
 

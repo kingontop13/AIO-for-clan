@@ -210,7 +210,7 @@ class NoPrefix(commands.Cog):
                         embed.set_footer(text="Yuna-bot  - No Prefix, Join support to regain access.")
                         support = Button(label='Support',
                                          style=discord.ButtonStyle.link,
-                                         url=f'https://https://discord.gg/35FqchfVZG')
+                                         url='https://discord.gg/35FqchfVZG')
                         view = View()
                         view.add_item(support)
 
@@ -387,12 +387,12 @@ class NoPrefix(commands.Cog):
             await db.execute("DELETE FROM np WHERE id = ?", (user.id,))
             await db.commit()
 
-        guild = ctx.bot.get_guild(699587669059174461)
+        guild = ctx.bot.get_guild(1324668335069331477)
         if guild:
             member = guild.get_member(user.id)
             if member:
-                role = guild.get_role(1295883122902302771)
-                if role in member.roles:
+                role = guild.get_role(1324668335069331484)
+                if role and role in member.roles:
                     await member.remove_roles(role)
 
         # Create success container
@@ -559,7 +559,7 @@ class NoPrefix(commands.Cog):
 
         embed = discord.Embed(
             title="Congratulations you got 2 months No Prefix!",
-            description=f"You've been credited 2 months of global No Prefix for boosting our Partnered Servers. You can now use my commands without prefix. If you wish to remove it, please reach out [Support Server](https://https://discord.gg/35FqchfVZG).",
+            description=f"You've been credited 2 months of global No Prefix for boosting our Partnered Servers. You can now use my commands without prefix. If you wish to remove it, please reach out [Support Server](https://discord.gg/35FqchfVZG).",
             color=0x000000
         )
         try:
@@ -579,9 +579,9 @@ class NoPrefix(commands.Cog):
 
     async def remove_np(self, user):
         async with aiosqlite.connect(self.db_path) as db:
-            async with db.execute("SELECT expiry_time FROM np WHERE id = ?", (user.id,)) as cursor:
+            async with db.execute("SELECT 1 FROM np WHERE id = ?", (user.id,)) as cursor:
                 row = await cursor.fetchone()
-                if row is None or row[0] is None:
+                if row is None:
                     return
 
             await db.execute("DELETE FROM np WHERE id = ?", (user.id,))
