@@ -103,10 +103,10 @@ class Mention (commands .Cog ):
 
                 content = (
                     f"### 👋 Hey [{message.author.display_name}](https://discord.com/users/{message.author.id})!\n"
-                    f"I'm **Yuna**, your intelligent and friendly companion. <a:ButterflyWhite:1479361913812025386>\n"
+                    f"I'm **Namgung Clan Management**, your intelligent and friendly companion. <a:ButterflyWhite:1479361913812025386>\n"
                     f"> - **Server Prefix:** `{prefix}`\n"
                     f"> - **Total Commands:** `{self.bot.total_commands if hasattr(self.bot, 'total_commands') else '81'}`\n"
-                    f"> - **Developer:** [itsfizys](https://discord.com/users/1124248109472550993)"
+                    f"> - **Developer:** [.kingontop](https://discord.com/users/1063700512945475594)"
                 )
                 container.add_item(ui.TextDisplay(content))
                 view.add_item(container)
