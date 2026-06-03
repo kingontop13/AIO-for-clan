@@ -96,7 +96,7 @@ class HelpLayout(ui.LayoutView):
 
         new_content = (
             f"<a:ButterflyWhite:1479361913812025386> Hey [{self.ctx.author.display_name}]({self.ctx.author.avatar.url if self.ctx.author.avatar else 'https://discord.com'})!\n"
-            f"I'm **Yuna**, your friendly companion.\n\n"
+            f"I'm **Namgung Clan Management**, your friendly companion.\n\n"
             f"   <:arrow:1479361920254345391> Prefix for this server: **{self.server_prefix}**\n"
             f"   <:arrow:1479361920254345391> Pick from the menu to continue!"
         )
