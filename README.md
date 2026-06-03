@@ -13,7 +13,7 @@
 
 ---
 
-## ✨ What is Yuna?
+## ✨ What is Namgung Clan Management?
 
 **Yuna** is a state-of-the-art multipurpose Discord bot designed for performance and security. Powered by the **Component V2** architecture, Yuna delivers a premium user experience with sleek layouts and advanced functionality.
 
@@ -73,7 +73,7 @@ BOT_PREFIX=!
 **Discord:** `itsfizys`  
 **Community:** AeroX Development  
 **Discord Server:** [discord.gg/aerox](https://discord.gg/aerox)
-
+**Customized** `KING .kingontop`
 ---
 
 ### 🏛️ Original Olympus Project
