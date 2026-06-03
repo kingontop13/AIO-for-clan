@@ -49,11 +49,11 @@ async def load_reactionrole ():
 def print_startup_banner ():
     """Print the AeroX startup banner"""
     banner = [
-        "AeroX Multipurpose Bot",
+        " Namgung Clan Management ",
         "──────────────────────────────────────",
         "System: Operational",
-        "Developer: itsfizys (AeroX Development)",
-        "Community: https://discord.gg/aerox",
+        "Developer: .kingontop",
+        "Community: https://discord.gg/Mqt9FHt2HM",
         "──────────────────────────────────────"
     ]
     for line in banner:
