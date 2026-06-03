@@ -69,8 +69,8 @@ class Yuna (commands .AutoShardedBot ):
 
     async def set_streaming_status (self ):
         activity =discord .Streaming (
-            name ="&help | AeroX Development",
-            url ="https://twitch.tv/Yuna"
+            name ="&help | Namgung Clan Management",
+            url ="https://discord.gg/Mqt9FHt2HM"
         )
         await self .change_presence (status =discord .Status .idle ,activity =activity )
 
